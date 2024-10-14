@@ -1,0 +1,90 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 70px auto 100px;
+  .moviesList {
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    .movie {
+      text-decoration: none;
+      color: black;
+      img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+      }
+    }
+  }
+  .div1,
+  .player {
+    background-color: grey;
+    color: white;
+  }
+}
+.songs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: black;
+  .song {
+    color: white;
+    font-size: large;
+    display: grid;
+    border-bottom: 1px solid #e3e3e3;
+    background-color: black;
+    padding: 15px;
+    grid-template-columns: 10fr 1fr 1fr;
+    button {
+      width: 50px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+}
+.player {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  div:first-child {
+    .title{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    img {
+      width: 100px;
+      height: 80px;
+    }
+  }
+  .div2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    div:first-child{
+        span{
+            font-size: 30px;
+        }
+
+    }
+    div:last-child{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .bar{
+            height: 3px;
+            width: 400px;
+            background-color: #e3e3e3;
+        }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+/* *{
+    padding: 0;
+    margin: 0;
+}
+.homeSection{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100px auto;
+    div:first-child{
+        background-color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        .link{
+            text-decoration: none;
+            font-size: large;
+        }
+    }
+    div:last-child{
+        background-color: azure;
+    }
+} */
+*{
+    padding: 0;
+    margin: 0;
+}
+.usersLogin{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 100px auto;
+    div:first-child{
+        display: grid;
+        justify-content: center;
+        grid-template-rows: 50px 50px;
+        background-color: #e3e3e3;
+    }
+    div:last-child{
+        background-color: antiquewhite;
+    }
+}

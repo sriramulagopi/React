@@ -1,0 +1,55 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.navbar{
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    .fa-react{
+        font-size: 35px;
+        color: #08a6daa4;
+    }
+    input{
+        flex-grow: 1;
+        padding: 6px;
+        background-color: #EBECF0;
+        border-radius: 20px;
+    }
+    a{
+        font-size: large;
+        font-weight: 600;
+    }
+    .fa-moon{
+        font-size: 20px;
+    }
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    i{
+        font-size: 100px;
+        color: #08a6daa4;
+    }
+    h1{
+        font-size: 60px;
+    }
+    h5{
+        font-size: 37px;
+    }
+    .buttons{
+        display: flex;
+        gap: 15px;
+        button{
+            padding: 15px;
+            border-radius: 30px;
+            font-size: large;
+            border: none;
+        }
+    }
+}

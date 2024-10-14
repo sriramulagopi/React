@@ -1,0 +1,19 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.loginform{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e3e3e3;
+    form{
+        width: 500px;
+        background-color: whitesmoke;
+        padding: 30px 50px;
+        h4{
+            margin: 20px 0px;
+        }
+    }
+}

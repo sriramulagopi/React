@@ -17,6 +17,8 @@
 //     </div>
 // }
 
+import { useState } from "react"
+
 // export const App = function(){
 //     const [count,setCount]=useState(0);
 //     const Incre = function(){
@@ -99,5 +101,23 @@
 // export const App = function(){
 //     return <div>
 //         <Card n={10}/>
+//     </div>
+// }
+
+
+
+// State Uplifting
+// const Incre = function({setCount}){
+//     return <button onClick={()=>{setCount(curr=>curr+1)}}>Increment</button>
+// }
+// const Decre = function({setCount}){
+//     return <button onClick={()=>{setCount(curr=>curr-1)}}>Decrement</button>
+// }
+// export const App = function(){
+//     const [count,setCount]=useState(0);
+//     return <div>
+//         <Decre setCount={setCount}/>
+//         <h1>Count: {count}</h1>
+//         <Incre setCount={setCount}/>
 //     </div>
 // }

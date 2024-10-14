@@ -1,21 +1,20 @@
-let array = ["Siblings","Friends","Love","Affection","Marriage","Enemy"]
-let name1 = "Suraj";
-let name2 = "Samantha";
-let obj = {};
-let count = 0;
-for (let i=0;i<name1.length;i++){
-    if(obj[name1[i]]){
-        obj[name1[i]]++ 
+const str = "HELLO";
+function captilize(str){
+    let str1="";
+    for (let i=0;i<str.length;i++){
+        if(str[i]>='a' && str[i]<='z' && i%2===0){
+            str1+=str[i].toUpperCase();
+        }
+        else if(str[i]>='A' && str[i]<='Z' && i%2!==0){
+            str1+=str[i].toLowerCase();
+        }
+        else{
+            str1+=str[i];
+        }
     }
-    else{
-        obj[name1[i]]=1;
-    }
+    return str1;
 }
-for (let i=0;i<name2.length;i++){
-    if(obj[name2[i]] && obj[name2[i]]>0){
-        obj[name2[i]]--;
-        count++;
-    }
-}
-let len = ((name1.length+name2.length)-(count*2))%6
-console.log(array[len]);
+console.log(captilize("hello"));
+console.log(captilize("HELLO"));
+console.log(captilize("hello???"));
+console.log(captilize("yo eli"))

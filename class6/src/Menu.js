@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./style.css";
-const data = [
+let items = [
   {
     id: 1,
     title: "buttermilk pancakes",
     category: "breakfast",
     price: 15.99,
-    img: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb4D9Qd-wodtv9ztG1fZXM1dko4pl5Pw4-3g&usqp=CAU`,
+    img: "https://www.lacademie.com/wp-content/uploads/2022/03/indian-breakfast-recipes.jpg",
     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
   },
   {
@@ -14,7 +14,7 @@ const data = [
     title: "diner double",
     category: "lunch",
     price: 13.99,
-    img: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEpht1BUToiWLK_VuVJEmhOI_gxIjgLvnnog&usqp=CAU`,
+    img: "https://traditionallymodernfood.com/wp-content/uploads/2022/01/south-indian-lunch-combo-cooking-for-guest-scaled.jpeg",
     desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
   },
   {
@@ -22,7 +22,7 @@ const data = [
     title: "godzilla milkshake",
     category: "shakes",
     price: 6.99,
-    img: "https://b.zmtcdn.com/data/dish_photos/8a0/08ad40238a7ead9b59116c02d9c258a0.jpg?output-format=webp ",
+    img: "https://www.meron.com/wp-content/uploads/2023/02/Milk-Shakes-min-scaled.jpg",
     desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
   },
   {
@@ -30,7 +30,7 @@ const data = [
     title: "country delight",
     category: "breakfast",
     price: 20.99,
-    img: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy2QLyeapPZNfj1acm9SltWO8fveCzB2EjrQ&usqp=CAU`,
+    img: "https://cdn.thisday.app/media/uploads/1.jpg-9907f7ebb0c15c4a_cmprssd.webp",
     desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
   },
   {
@@ -38,7 +38,7 @@ const data = [
     title: "egg attack",
     category: "lunch",
     price: 22.99,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrVgZG_24Sv9TLm2H4C6yyFiBPMKy7yN0KaA&usqp=CAU",
+    img: "https://images.immediate.co.uk/production/volatile/sites/30/2022/11/budget-sunday-lunch-collection-2b94383.jpg",
     desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
   },
   {
@@ -46,7 +46,7 @@ const data = [
     title: "oreo dream",
     category: "shakes",
     price: 18.99,
-    img: "https://b.zmtcdn.com/data/dish_photos/7f5/98e936d734fc5b3261fb47c8a1e157f5.jpg?output-format=webp",
+    img: "https://st3.depositphotos.com/1177973/13251/i/450/depositphotos_132516060-stock-photo-delicious-milkshakes-in-glasses.jpg",
     desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
   },
   {
@@ -54,7 +54,7 @@ const data = [
     title: "bacon overflow",
     category: "breakfast",
     price: 8.99,
-    img: "https://www.collinsdictionary.com/images/full/breakfast_169364927.jpg",
+    img: "https://www.awesomecuisine.com/wp-content/uploads/2014/05/curd-bonda.jpg",
     desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
   },
   {
@@ -62,7 +62,7 @@ const data = [
     title: "american classic",
     category: "lunch",
     price: 12.99,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVU2W3ACgPoQLHbQ02hqBEnfndQlpR3d7RVw&usqp=CAU",
+    img: "https://farm8.staticflickr.com/7778/17269216874_f4d1057324_z.jpg",
     desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
   },
   {
@@ -70,60 +70,58 @@ const data = [
     title: "quarantine buddy",
     category: "shakes",
     price: 16.99,
-    img: "https://b.zmtcdn.com/data/pictures/chains/0/18252180/1ebfccb52d6a0fc52ff0a8348bbf2d9a_o2_featured_v2.jpg?output-format=webp",
+    img: "https://northernvirginiamag.com/wp-content/uploads/2022/08/milkshake.jpg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
-const Nav = function ({state,setState}) {
-    const onchange = function(e){
-        setState(e.target.id)
-    }
+export const Menu = function () {
+  const [state, setState] = useState("all");
   return (
-    <form onChange={onchange}>
-      <input type="radio" name="items" id="all" checked={state==="all"?true:false}/>
-      <label for="all" >All</label>
-      <input type="radio" name="items" id="breakfast" />
-      <label for="breakfast">Breakfast</label>
-      <input type="radio" name="items" id="lunch" />
-      <label for="lunch">Lunch</label>
-      <input type="radio" name="items" id="shakes" />
-      <label for="shakes">Shakes</label>
-    </form>
+    <div className="container">
+      <h1>Our Menu</h1>
+      <SelectedItems state={state} setState={setState} />
+      <Images state={state} />
+    </div>
   );
 };
-const Items1 = function ({ state }) {
-  let arr;
-  if (state === "all") {
-    arr = data.filter((item) => item);
-  } else {
-    arr = data.filter((item) => state === item.category);
-  }
+const SelectedItems = function ({state, setState }) {
+  const onChange = function (e) {
+    setState(e.target.value);
+  };
   return (
-    <div className="items">
-      {arr.map((item) => {
+    <div className="select">
+      <form onChange={onChange}>
+        <input type="radio" value="all" name="items" id="A" checked={state==="all"}/>
+        <label htmlFor="A">All</label>
+        <input type="radio" value="breakfast" name="items" id="B" />
+        <label htmlFor="B">Breakfast</label>
+        <input type="radio" value="lunch" name="items" id="C" />
+        <label htmlFor="C">Lunch</label>
+        <input type="radio" value="shakes" name="items" id="D" />
+        <label htmlFor="D">Shakes</label>
+      </form>
+    </div>
+  );
+};
+const Images = function ({ state }) {
+  const array =
+    state !== "all" ? items.filter((a) => state === a.category) : items;
+  return (
+    <div className="images">
+      {array.map((item) => {
         return (
           <div className="item">
-            <img src={item.img} alt="Error" />
-            <div>
+            <img src={item.img} alt="Images url Error" />
+            <div className="itemDetails">
               <div className="itemName">
                 <h4>{item.title}</h4>
-                <span>{item.price}</span>
+                <span>$ {item.price}</span>
               </div>
               <p>{item.desc}</p>
             </div>
           </div>
         );
       })}
-    </div>
-  );
-};
-export const Menu = function () {
-  const [state, setState] = useState("all");
-  return (
-    <div className="container">
-      <h1>Our Menu</h1>
-      <Nav state={state} setState={setState}/>
-      <Items1 state={state} />
     </div>
   );
 };
